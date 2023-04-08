@@ -5,8 +5,9 @@
   <link href="https://fonts.cdnfonts.com/css/mv-boli" rel="stylesheet">
   <style type="text/css">
     body {
-      font-family: 'MV Boli', mv-boli;
+      font-family: 'MV Boli', sans-serif;
       font-size: 17px;
+	  font-weight: bold;
       background: #ad7add;
       counter-reset: Serial;
       direction: ltr;
@@ -22,20 +23,21 @@
     }
     table {
       font-size: 17px;
+	  font-weight: bold;
       width: 100%;
       border-collapse:collapse;
     }
     th {
       background: #5aa0cf;
-      padding: 10px 2px;
+      padding: 4px 2px;
+	  font-weight: bold;
       height: 44px;
-      font-weight: normal;
-      text-align: right;
+      text-align: left;
     }
     table.content td {
       background: #a89cdd;
       height: 20px;
-      padding: 8px;
+      padding: 5px;
     }
     table.list tr:nth-child(odd) td {
       background: #ddd;
@@ -60,23 +62,23 @@
 /*      display: none;*/
     }
     div.text-div {
-      background-color: #ddd;
+      background-color: #8173cf;
       width: 340px;
       height: 20px;
       padding: 10px;
     }
     input[type=number] {
-      width: 60px;
+      width: 70px;
     }
     input[type=text] {
-      width: 250px;
+      width: 270px;
     }
     button.start{
-      width: 150px;
+      width: 140px;
       font-size: 16px;
       font-weight: bold;
       color: green;
-      padding: 2px;
+      padding: 3px;
       float: left;
     }
   </style>
@@ -85,7 +87,7 @@
   <div style="padding: 0; margin: auto; width: 360px;">
     <table dir="ltr" class="content">
       <tr>
-        <td colspan="2" align="center" style="border-bottom: 1px solid #666;">
+        <td colspan="2" align="center" style="border-bottom: 1px solid #a89cdd;">
           <strong>CFIP Scanner</strong>
         </td>
       </tr>
@@ -104,14 +106,14 @@
       </tr>
       <tr>
         <td>
-          <label>Use All IP Range ?<input id="uk-cdn" type="checkbox" /></label>
+          <label>Use All IP Range ? <input id="uk-cdn" type="checkbox" /></label>
         </td>
         <td>
           <button class="start" onclick="startScan()">Start</button>
         </td>
       </tr>
     </table>
-    <div class="text-div" style="border-top: 1px solid #666;">
+    <div class="text-div" style="border-top: 1px solid #666; background: rgb(255, 208, 0)">
       <div id="start-hint" style="color: red;">Turn Off Your VPN First !</div>
       <div style="width: 110px; float: right;"><span id="test-no"></span></div>
       <div style="width: 120px; float: right;"><span id="ip-no"></span></div>
@@ -132,10 +134,10 @@
           </th>
           <th width="60">
             <a class="download-link" href="#" onclick="downloadAsCSV()">
-              <img height="24px" src="assets/excel.png" />
+              <img height="22px" src="assets/excel.png" />
             </a>
             <a class="download-link" href="#" onclick="downloadAsJSON()">
-              <img height="24px" src="assets/json.png" />
+              <img height="22px" src="assets/json.png" />
             </a>
           </th>
         </tr>
@@ -2134,8 +2136,8 @@ async function testIPs(ipList) {
           <td>${obj.ip}</td>
           <td>${obj.latency}ms</td>
           <td>
-            <img height="20px" src="assets/${obj.location}.png" />
-            <img height="20px" src="assets/copy.png" onclick="copyToClipboard('${obj.ip}')"/>
+            <img height="16px" src="assets/${obj.location}.png" />
+            <img height="16px" src="assets/copy.png" onclick="copyToClipboard('${obj.ip}')"/>
           </td>
         </tr>`).join('\n');
       document.getElementById('result').innerHTML = tableRows;
