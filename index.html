@@ -2139,7 +2139,6 @@ async function testIPs(ipList) {
           <td>${obj.ip}</td>
           <td>${obj.latency}ms</td>
           <td>
-            <img height="16px" src="assets/${obj.location}.png" />
             <img height="16px" src="assets/copy.png" onclick="copyToClipboard('${obj.ip}')"/>
           </td>
         </tr>`).join('\n');
